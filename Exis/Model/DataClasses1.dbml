@@ -1,0 +1,578 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Exis" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Exis;Persist Security Info=True;User ID=admin-exis" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ExisConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.AssignTechnical" Method="AssignTechnical">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Technician" Parameter="technician" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.ChangePassword" Method="ChangePassword">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CheckScheduleInstallationForToday" Method="CheckScheduleInstallationForToday">
+    <Parameter Name="JobType" Parameter="jobType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateScheduled" Parameter="dateScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CheckScheduleInstallationForTodayResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CheckUser" Method="CheckUser">
+    <ElementType Name="CheckUserResult">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Middlename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountAllBill" Method="CountAllBill">
+    <ElementType Name="CountAllBillResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountBadgeForActivationFromCustomer" Method="CountBadgeForActivationFromCustomer">
+    <ElementType Name="CountBadgeForActivationFromCustomerResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountBill" Method="CountBill">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CountBillResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountCustomer" Method="CountCustomer">
+    <ElementType Name="CountCustomerResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountJobOrder" Method="CountJobOrder">
+    <ElementType Name="CountJobOrderResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountServicePlan" Method="CountServicePlan">
+    <ElementType Name="CountServicePlanResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountTowerAll" Method="CountTowerAll">
+    <ElementType Name="CountTowerAllResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountUser" Method="CountUser">
+    <ElementType Name="CountUserResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertCustomer" Method="InsertCustomer">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Middlename" Parameter="middlename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Birthdate" Parameter="birthdate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CivilStatus" Parameter="civilStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Nationality" Parameter="nationality" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BillingAddress" Parameter="billingAddress" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TowerID" Parameter="towerID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UnitNo" Parameter="unitNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailAddress" Parameter="emailAddress" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber2" Parameter="contactNumber2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateAdded" Parameter="dateAdded" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertJobOrder" Method="InsertJobOrder">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="JobType" Parameter="jobType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="InstallationNotes" Parameter="installationNotes" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Technician" Parameter="technician" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateCreated" Parameter="dateCreated" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateScheduled" Parameter="dateScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TimeScheduled" Parameter="timeScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertServicePlan" Method="InsertServicePlan">
+    <Parameter Name="ServicePlanID" Parameter="servicePlanID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Internet" Parameter="internet" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Less" Parameter="less" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertTower" Method="InsertTower">
+    <Parameter Name="TowerID" Parameter="towerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TowerName" Parameter="towerName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertUser" Method="InsertUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Middlename" Parameter="middlename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectAllCustomer" Method="SelectAllCustomer">
+    <ElementType Name="SelectAllCustomerResult">
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middlename" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthdate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CivilStatus" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlanName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TowerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectCustomer" Method="SelectCustomer">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectCustomerResult">
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middlename" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthdate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CivilStatus" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlanName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TowerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectJobOrder" Method="SelectJobOrder">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectJobOrderResult">
+      <Column Name="JobId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InstallationNotes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Technician" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateScheduled" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeScheduled" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectServicePlan" Method="SelectServicePlan">
+    <Parameter Name="ServicePlanID" Parameter="servicePlanID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectServicePlanResult">
+      <Column Name="ServicePlanID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlanName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Internet" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VAT" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Less" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectServicePlanByPlanName" Method="SelectServicePlanByPlanName">
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectServicePlanByPlanNameResult">
+      <Column Name="ServicePlanID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlanName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Internet" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="VAT" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Less" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.setInactiveServicePlan" Method="setInactiveServicePlan">
+    <Parameter Name="ServicePlanID" Parameter="servicePlanID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateBillPaid" Method="UpdateBillPaid">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentReceived" Parameter="paymentReceived" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomer" Method="UpdateCustomer">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BillingAddress" Parameter="billingAddress" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TowerID" Parameter="towerID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UnitNo" Parameter="unitNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailAddress" Parameter="emailAddress" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber2" Parameter="contactNumber2" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomerActive" Method="UpdateCustomerActive">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomertoForActivation" Method="UpdateCustomertoForActivation">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomertoReadyForActivation" Method="UpdateCustomertoReadyForActivation">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateJobOrderPending" Method="UpdateJobOrderPending">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Remarks" Parameter="remarks" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateJobOrderResched" Method="UpdateJobOrderResched">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateScheduled" Parameter="dateScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateJobOrderStatus" Method="UpdateJobOrderStatus">
+    <Parameter Name="JobId" Parameter="jobId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateUserStatus" Method="UpdateUserStatus">
+    <Parameter Name="UserId" Parameter="userId" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectUserWhereUserID" Method="SelectUserWhereUserID">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectUserWhereUserIDResult">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Middlename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateUserChangeUserType" Method="UpdateUserChangeUserType">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="UserType" Parameter="userType" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateResetPasswordUser" Method="UpdateResetPasswordUser">
+    <Parameter Name="UserID" Parameter="userID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateServicePlan" Method="UpdateServicePlan">
+    <Parameter Name="ServicePlanID" Parameter="servicePlanID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Description" Parameter="description" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Internet" Parameter="internet" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="VAT" Parameter="vAT" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Less" Parameter="less" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Total" Parameter="total" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CountBadgeForActivationAndOpenFromJobOrder" Method="CountBadgeForActivationAndOpenFromJobOrder">
+    <Parameter Name="Datetimetoday" Parameter="datetimetoday" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CountBadgeForActivationAndOpenFromJobOrderResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.InsertCustomerType" Method="InsertCustomerType">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CustomerType" Parameter="customerType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ValidID" Parameter="validID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AuthorityToMoveIn" Parameter="authorityToMoveIn" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Passport" Parameter="passport" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ICRCard" Parameter="iCRCard" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LeaseOfContract" Parameter="leaseOfContract" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectCustomerType" Method="SelectCustomerType">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectCustomerTypeResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ValidID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorityToMoveIn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Passport" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ICRCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LeaseOfContract" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateCustomerType" Method="UpdateCustomerType">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ValidID" Parameter="validID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AuthorityToMoveIn" Parameter="authorityToMoveIn" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Passport" Parameter="passport" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ICRCard" Parameter="iCRCard" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LeaseOfContract" Parameter="leaseOfContract" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.CheckScheduleConflict" Method="CheckScheduleConflict">
+    <Parameter Name="JobType" Parameter="jobType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateScheduled" Parameter="dateScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TimeScheduled" Parameter="timeScheduled" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CheckScheduleConflictResult">
+      <Column Name="JobId" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="JobType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="InstallationNotes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Remarks" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Technician" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DateScheduled" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TimeScheduled" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UPDATEJobOrderToClosed" Method="UPDATEJobOrderToClosed">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SearchAccountNumber" Method="SearchAccountNumber">
+    <Parameter Name="TowerUnitNumber" Parameter="towerUnitNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SearchAccountNumberResult">
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountBadgeForActivationFromJobOrder" Method="CountBadgeForActivationFromJobOrder">
+    <ElementType Name="CountBadgeForActivationFromJobOrderResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CountBadgeForRepairAndOpenFromJobOrder" Method="CountBadgeForRepairAndOpenFromJobOrder">
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="JobType" Parameter="jobType" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="CountBadgeForRepairAndOpenFromJobOrderResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CheckCustomerIfExistByTowerAndUnitNumber" Method="CheckCustomerIfExistByTowerAndUnitNumber">
+    <Parameter Name="TowerID" Parameter="towerID" Type="System.String" DbType="NVarChar(1)" />
+    <Parameter Name="UnitNumber" Parameter="unitNumber" Type="System.String" DbType="NVarChar(4)" />
+    <ElementType Name="CheckCustomerIfExistByTowerAndUnitNumberResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Firstname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Middlename" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Lastname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Birthdate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CivilStatus" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Gender" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlanName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillingAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TowerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitNo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ContactNumber2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateBillingFromAdmin" Method="UpdateBillingFromAdmin">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ServicePlandID" Parameter="servicePlandID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomerByAdmin" Method="UpdateCustomerByAdmin">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Firstname" Parameter="firstname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Middlename" Parameter="middlename" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Lastname" Parameter="lastname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Birthdate" Parameter="birthdate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CivilStatus" Parameter="civilStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Gender" Parameter="gender" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Nationality" Parameter="nationality" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="EmailAddress" Parameter="emailAddress" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber" Parameter="contactNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ContactNumber2" Parameter="contactNumber2" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateBillingFromCSRbyAccountNumberandForPayment" Method="UpdateBillingFromCSRbyAccountNumberandForPayment">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ServicePlandID" Parameter="servicePlandID" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomerServicePlanByCSR" Method="UpdateCustomerServicePlanByCSR">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ServicePlanName" Parameter="servicePlanName" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomerStatusForDisconnection" Method="UpdateCustomerStatusForDisconnection">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectBillingbyAccountNumber" Method="SelectBillingbyAccountNumber">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectBillingbyAccountNumberResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BillingID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceivedPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceived" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlandID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmountDue" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDateIdentifier" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InstallationBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateRemainingBalanceFromPreviousBill" Method="UpdateRemainingBalanceFromPreviousBill">
+    <Parameter Name="RemainingBalanceFromPreviousBill" Parameter="remainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="InstallationBalance" Parameter="installationBalance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertBillingInstallation" Method="InsertBillingInstallation">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateAdded" Parameter="dateAdded" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BillNumber" Parameter="billNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BalanceFromPreviousBill" Parameter="balanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="PaymentReceivedPreviousBill" Parameter="paymentReceivedPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="PaymentReceived" Parameter="paymentReceived" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RemainingBalanceFromPreviousBill" Parameter="remainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="ServicePlanID" Parameter="servicePlanID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="DueDate" Parameter="dueDate" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DueDateIdentifier" Parameter="dueDateIdentifier" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="InstallationBalance" Parameter="installationBalance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SelectBillingbyAccountNumberandStatusForPayment" Method="SelectBillingbyAccountNumberandStatusForPayment">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectBillingbyAccountNumberandStatusForPaymentResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BillingID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceivedPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceived" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlandID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmountDue" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDateIdentifier" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InstallationBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SelectBillID" Method="SelectBillID">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SelectBillIDResult">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BillingID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountNumber" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BillNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceivedPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="PaymentReceived" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="RemainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ServicePlandID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalAmountDue" Type="System.Decimal" DbType="Decimal(18,2) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DueDateIdentifier" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="InstallationBalance" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateBillingTotalAmountDue" Method="UpdateBillingTotalAmountDue">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentReceived" Parameter="paymentReceived" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="InstallationBalance" Parameter="installationBalance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateClosePreviousBill" Method="UpdateClosePreviousBill">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="BillNumber" Parameter="billNumber" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateBillingTotalAmountDueBalance" Method="UpdateBillingTotalAmountDueBalance">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentReceived" Parameter="paymentReceived" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateBillingTotalAmountDueForSobraOrSaktoRaAngGebayad" Method="UpdateBillingTotalAmountDueForSobraOrSaktoRaAngGebayad">
+    <Parameter Name="BillingID" Parameter="billingID" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="DateModified" Parameter="dateModified" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="PaymentReceived" Parameter="paymentReceived" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TotalCurrentBill" Parameter="totalCurrentBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalAmountDue" Parameter="totalAmountDue" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="BalanceFromPreviousBill" Parameter="balanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="RemainingBalanceFromPreviousBill" Parameter="remainingBalanceFromPreviousBill" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="InstallationBalance" Parameter="installationBalance" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCustomerDisconnected" Method="UpdateCustomerDisconnected">
+    <Parameter Name="AccountNumber" Parameter="accountNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
